@@ -300,11 +300,12 @@ and your response should look like this:
 ```
 
 Refer possible [status values](#all-possible-payment-states).
-Failing states can also have a `message` property with the reason, which will be logged and could be seen as information for the merchant.
+Failing states can also have a `message` property with the reason, which will be logged and could be seen as information for the merchant. 
+Do not set a `message` for successful payments because they will cause the payment process to fail.
 
 ```json5
 {
-  "status": "authorize",
+  "status": "failed",
   "message": "The customer failed to pass the credit check."
 }
 ```
